@@ -35,4 +35,8 @@ RUN pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/we
     pip install /tmp/*.whl && \
     pip install -U "tg-signer[tgcrypto]"
 
-WORKDIR /opt/tg-signer
+WORKDIR /tg-signer
+
+COPY . .
+
+CMD ["/bin/bash", "start.sh"]
